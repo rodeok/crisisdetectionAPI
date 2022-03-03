@@ -116,12 +116,15 @@ app.get('/news/ed/:ngstudent', (req,res)=>{
             const url = $(this).attr('href')
             specificAsuu.push({
                 title,
-                url,
+                url: ngstudentBase + url,
                 source: ngstudent
             })
         })
         res.json(specificAsuu)
     }).catch(err => console.log(err))
 })
+
+
+
 
 app.listen(PORT, ()=>console.log(`Server Connected at ${PORT}`))
